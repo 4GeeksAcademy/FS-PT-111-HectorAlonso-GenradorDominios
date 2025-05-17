@@ -14,14 +14,13 @@ window.onload = function() {
     
     let arrayResultado = []
 
-    /*for of anidados, en este caso, en vez de mostrar todos, por consola, quitando el comentario en la 
-    linea 24 salen todos, yo lo que he generado ha sido otro array y solo muestra un "dominio" cada vez que se actualiza la pagina*/ 
+    //for of anidados, en este caso, muestra todos en consola, pero en la web solo uno al azar
     for (let articulo of articulos){
       for(let adjetivo of adjetivos){
           for(let nombre of nombres){
               for(let dominio of dominios ){
                 let resultado = (articulo+adjetivo+nombre+dominio);
-                  //console.log(resultado);//ver que aparezca en consola todas las respuestas
+                  console.log(resultado);//ver que aparezca en consola todas las respuestas
                     arrayResultado.push(resultado);//almacenamos los resultados en un nuevo array
               }
           }
@@ -34,6 +33,8 @@ window.onload = function() {
     let numeroDominioMostrado = Math.floor(Math.random()*20401);
     console.log(numeroDominioMostrado);
 
-
+//linea 37 muestra un dominio al azar, linea 38 muestra todos los dominios en la web
     document.getElementById("resultado").innerHTML = arrayResultado[numeroDominioMostrado];
+   // document.getElementById("resultado").innerHTML = arrayResultado.join("<br>");
+
 };
